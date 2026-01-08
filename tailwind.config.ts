@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        lg: ".625rem", /* 10px */
+        lg: ".5rem", /* 8px - Zillow-inspired, matches cards and buttons */
         md: ".5rem", /* 8px - Zillow-inspired */
         sm: ".25rem", /* 4px */
       },
