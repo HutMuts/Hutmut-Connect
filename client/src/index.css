@@ -297,4 +297,27 @@
     box-shadow: 0 4px 12px -2px hsl(0 0% 0% / 0.30), 
                 0 2px 6px -2px hsl(0 0% 0% / 0.20);
   }
+
+  /* Leaflet marker styling */
+  .for-rent-marker {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Bounce animation for map markers */
+  @keyframes marker-bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .marker-bounce {
+    animation: marker-bounce 0.8s ease-out;
+  }
 }

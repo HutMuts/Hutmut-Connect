@@ -22,6 +22,7 @@ import {
   Menu,
   X
 } from "lucide-react";
+import { HeroMap } from "@/components/hero-map";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -196,89 +197,95 @@ export default function Landing() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-28 pb-20 sm:pt-40 sm:pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Content */}
-            <div className="space-y-6 text-center lg:text-left">
-              <h1 
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight"
-                data-testid="text-hero-title"
-              >
-                {content.heroTitle}
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0" data-testid="text-hero-subtitle">
-                {content.heroSubtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                <Button 
-                  size="lg" 
-                  onClick={scrollToWaitlist}
-                  className="text-base"
-                  data-testid="button-get-early-access"
+      {/* Hero Section with Map Background */}
+      <section className="relative pt-28 pb-20 sm:pt-40 sm:pb-32 overflow-hidden">
+        {/* Full-width Map Background */}
+        <HeroMap />
+        
+        {/* Hero Content */}
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Content */}
+              <div className="space-y-6 text-center lg:text-left">
+                <h1 
+                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight"
+                  data-testid="text-hero-title"
                 >
-                  Get Early Access
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => setUserType(userType === "renter" ? "landlord" : "renter")}
-                  className="text-base"
-                  data-testid="button-switch-persona"
-                >
-                  {userType === "renter" ? "I'm a Landlord" : "I'm a Renter"}
-                </Button>
+                  {content.heroTitle}
+                </h1>
+                <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0" data-testid="text-hero-subtitle">
+                  {content.heroSubtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                  <Button 
+                    size="lg" 
+                    onClick={scrollToWaitlist}
+                    className="text-base"
+                    data-testid="button-get-early-access"
+                  >
+                    Get Early Access
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    onClick={() => setUserType(userType === "renter" ? "landlord" : "renter")}
+                    className="text-base bg-background/80 backdrop-blur-sm"
+                    data-testid="button-switch-persona"
+                  >
+                    {userType === "renter" ? "I'm a Landlord" : "I'm a Renter"}
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            {/* Right - Hero Image Area */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-md bg-card border border-card-border overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8 space-y-4">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
-                      {userType === "renter" ? (
-                        <Search className="w-12 h-12 text-primary" />
-                      ) : (
-                        <ShieldCheck className="w-12 h-12 text-primary" />
-                      )}
+              {/* Right - Scouts Card with floating shadow */}
+              <div className="relative z-20">
+                <div className="aspect-[4/3] rounded-md bg-card border border-card-border overflow-hidden marker-shadow">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center p-8 space-y-4">
+                      <div className="w-24 h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
+                        {userType === "renter" ? (
+                          <Search className="w-12 h-12 text-primary" />
+                        ) : (
+                          <ShieldCheck className="w-12 h-12 text-primary" />
+                        )}
+                      </div>
+                      <p className="text-lg font-medium text-foreground">
+                        {userType === "renter" 
+                          ? "Scouts discover hidden rentals" 
+                          : "Connect with verified tenants"}
+                      </p>
+                      <p className="text-sm text-muted-foreground max-w-xs mx-auto">
+                        {userType === "renter"
+                          ? "Physical 'For Rent' signs photographed before they're listed online"
+                          : "Your property stays private while Scouts bring quality leads"}
+                      </p>
                     </div>
-                    <p className="text-lg font-medium text-foreground">
-                      {userType === "renter" 
-                        ? "Scouts discover hidden rentals" 
-                        : "Connect with verified tenants"}
-                    </p>
-                    <p className="text-sm text-muted-foreground max-w-xs mx-auto">
-                      {userType === "renter"
-                        ? "Physical 'For Rent' signs photographed before they're listed online"
-                        : "Your property stays private while Scouts bring quality leads"}
-                    </p>
                   </div>
                 </div>
-              </div>
-              {/* Floating Stats - Map Markers with floating shadow */}
-              <div className="absolute -bottom-4 -left-4 sm:-left-8 bg-card border border-card-border rounded-md p-4 marker-shadow">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-foreground">2,400+</p>
-                    <p className="text-xs text-muted-foreground">Properties Found</p>
+                {/* Floating Stats */}
+                <div className="absolute -bottom-4 -left-4 sm:-left-8 bg-card border border-card-border rounded-md p-4 marker-shadow z-30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-foreground">2,400+</p>
+                      <p className="text-xs text-muted-foreground">Properties Found</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="absolute -top-4 -right-4 sm:-right-8 bg-card border border-card-border rounded-md p-4 marker-shadow">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Users className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-foreground">850+</p>
-                    <p className="text-xs text-muted-foreground">Active Scouts</p>
+                <div className="absolute -top-4 -right-4 sm:-right-8 bg-card border border-card-border rounded-md p-4 marker-shadow z-30">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-foreground">850+</p>
+                      <p className="text-xs text-muted-foreground">Active Scouts</p>
+                    </div>
                   </div>
                 </div>
               </div>
