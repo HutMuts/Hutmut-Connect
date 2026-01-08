@@ -23,14 +23,14 @@ const forRentIcon = L.divIcon({
 });
 
 const markerCoordinates: [number, number][] = [
-  [40.7128, -74.0060],
-  [40.7135, -74.0050],
-  [40.7110, -74.0080],
-  [40.7150, -74.0090],
-  [40.7145, -74.0040],
-  [40.7100, -74.0055],
-  [40.7160, -74.0070],
-  [40.7120, -74.0095],
+  [40.7280, -73.9850],
+  [40.7050, -74.0150],
+  [40.7180, -74.0300],
+  [40.6950, -73.9900],
+  [40.7350, -74.0050],
+  [40.7100, -73.9650],
+  [40.7220, -74.0450],
+  [40.6880, -74.0200],
 ];
 
 export function HeroMap() {
@@ -42,7 +42,7 @@ export function HeroMap() {
 
     const map = L.map(mapRef.current, {
       center: [40.7128, -74.0060],
-      zoom: 14,
+      zoom: 12,
       zoomControl: false,
       attributionControl: false,
       dragging: false,
