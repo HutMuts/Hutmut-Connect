@@ -22,7 +22,7 @@ export const waitlist = pgTable("waitlist", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
-  userType: text("user_type").notNull(), // 'renter' or 'landlord'
+  userType: text("user_type").notNull(), // 'renter', 'landlord', or 'mut'
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -35,7 +35,7 @@ export const insertWaitlistSchema = createInsertSchema(waitlist).pick({
 export const waitlistFormSchema = insertWaitlistSchema.extend({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  userType: z.enum(["renter", "landlord"], { required_error: "Please select a user type" }),
+  userType: z.enum(["renter", "landlord", "mut"], { required_error: "Please select a user type" }),
 });
 
 export type InsertWaitlist = z.infer<typeof insertWaitlistSchema>;

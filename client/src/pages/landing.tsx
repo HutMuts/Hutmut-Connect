@@ -20,7 +20,11 @@ import {
   Sparkles,
   ArrowRight,
   Menu,
-  X
+  X,
+  Camera,
+  DollarSign,
+  Clock,
+  Map
 } from "lucide-react";
 import { HeroMap } from "@/components/hero-map";
 import { Button } from "@/components/ui/button";
@@ -38,7 +42,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { waitlistFormSchema } from "@shared/schema";
 
-type UserType = "renter" | "landlord";
+type UserType = "renter" | "landlord" | "mut";
 
 const formSchema = waitlistFormSchema;
 
@@ -145,7 +149,35 @@ export default function Landing() {
     ]
   };
 
-  const content = userType === "renter" ? renterContent : landlordContent;
+  const mutContent = {
+    heroTitle: "Earn Money Scouting Rentals",
+    heroSubtitle: "Walk your neighborhood, photograph 'For Rent' signs, and get paid. Help renters find hidden gems while earning flexible income on your own schedule.",
+    howItWorks: [
+      {
+        icon: Camera,
+        title: "Spot & Snap",
+        description: "Walk through neighborhoods and photograph 'For Rent' signs you discover. Each verified listing earns you money."
+      },
+      {
+        icon: Map,
+        title: "Cover Your Area",
+        description: "Claim neighborhoods you know best. The more ground you cover, the more you earn. Work whenever it fits your schedule."
+      },
+      {
+        icon: DollarSign,
+        title: "Get Paid",
+        description: "Earn for every verified listing you submit. Build reputation, unlock bonuses, and grow your earnings over time."
+      }
+    ],
+    benefits: [
+      { icon: Clock, title: "Flexible Hours", description: "Work on your own schedule, anytime" },
+      { icon: DollarSign, title: "Earn Per Listing", description: "Get paid for every verified sign" },
+      { icon: Map, title: "Local Expert", description: "Know your neighborhood? Monetize it" },
+      { icon: Users, title: "Help Others", description: "Connect renters with hidden gems" }
+    ]
+  };
+
+  const content = userType === "renter" ? renterContent : userType === "landlord" ? landlordContent : mutContent;
 
   return (
     <div className="min-h-screen bg-background">
@@ -230,11 +262,11 @@ export default function Landing() {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    onClick={() => setUserType(userType === "renter" ? "landlord" : "renter")}
+                    onClick={() => setUserType(userType === "renter" ? "landlord" : userType === "landlord" ? "mut" : "renter")}
                     className="text-base bg-background/80 backdrop-blur-sm"
                     data-testid="button-switch-persona"
                   >
-                    {userType === "renter" ? "I'm a Landlord" : "I'm a Renter"}
+                    {userType === "renter" ? "I'm a Landlord" : userType === "landlord" ? "I'm a Mut" : "I'm a Renter"}
                   </Button>
                 </div>
               </div>
@@ -248,19 +280,25 @@ export default function Landing() {
                       <div className="w-24 h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
                         {userType === "renter" ? (
                           <Search className="w-12 h-12 text-primary" />
-                        ) : (
+                        ) : userType === "landlord" ? (
                           <ShieldCheck className="w-12 h-12 text-primary" />
+                        ) : (
+                          <Camera className="w-12 h-12 text-primary" />
                         )}
                       </div>
                       <p className="text-lg font-medium text-foreground">
                         {userType === "renter" 
                           ? "Muts discover hidden rentals" 
-                          : "Connect with verified tenants"}
+                          : userType === "landlord"
+                          ? "Connect with verified tenants"
+                          : "Earn money in your neighborhood"}
                       </p>
                       <p className="text-sm text-muted-foreground max-w-xs mx-auto">
                         {userType === "renter"
                           ? "Physical 'For Rent' signs photographed before they're listed online"
-                          : "Your property stays private while Muts bring quality leads"}
+                          : userType === "landlord"
+                          ? "Your property stays private while Muts bring quality leads"
+                          : "Photograph 'For Rent' signs and get paid for each verified listing"}
                       </p>
                     </div>
                   </div>
@@ -304,7 +342,9 @@ export default function Landing() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {userType === "renter" 
                 ? "Get access to hidden rentals in three simple steps" 
-                : "Find quality tenants without the hassle"}
+                : userType === "landlord"
+                ? "Find quality tenants without the hassle"
+                : "Start earning in three simple steps"}
             </p>
           </div>
 
@@ -341,7 +381,9 @@ export default function Landing() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {userType === "renter" 
                 ? "Skip the crowded listings and find your perfect home" 
-                : "Connect with the right tenants, protect your privacy"}
+                : userType === "landlord"
+                ? "Connect with the right tenants, protect your privacy"
+                : "Turn your neighborhood walks into income"}
             </p>
           </div>
 
@@ -373,7 +415,7 @@ export default function Landing() {
               Join the Waitlist
             </h2>
             <p className="text-lg text-muted-foreground">
-              Be first to access {userType === "renter" ? "hidden rentals" : "verified leads"} when we launch.
+              Be first to access {userType === "renter" ? "hidden rentals" : userType === "landlord" ? "verified leads" : "earning opportunities"} when we launch.
             </p>
           </div>
 
@@ -468,9 +510,9 @@ export default function Landing() {
       {/* Footer */}
       <footer className="py-16 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand */}
-            <div className="sm:col-span-2 lg:col-span-1">
+            <div className="sm:col-span-2 lg:col-span-2">
               <div className="flex items-center gap-2 mb-4">
                 <Home className="h-6 w-6 text-primary" />
                 <span className="font-bold text-xl text-foreground">Hut Muts</span>
@@ -500,20 +542,28 @@ export default function Landing() {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* For Muts */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+              <h4 className="font-semibold text-foreground mb-4">For Muts</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  hello@hutmuts.com
-                </li>
+                <li>Flexible Earnings</li>
+                <li>Work Your Schedule</li>
+                <li>Help Your Community</li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Hut Muts. All rights reserved.</p>
+          {/* Contact moved to separate row */}
+          <div className="mt-8 pt-8 border-t border-border">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Mail className="h-4 w-4" />
+                hello@hutmuts.com
+              </div>
+              <p className="text-sm text-muted-foreground">
+                &copy; {new Date().getFullYear()} Hut Muts. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
@@ -539,7 +589,7 @@ function PersonaToggle({
         role="tab"
         aria-selected={userType === "renter"}
         onClick={() => setUserType("renter")}
-        className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+        className={`px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
           userType === "renter"
             ? "bg-primary text-primary-foreground"
             : "text-muted-foreground"
@@ -552,7 +602,7 @@ function PersonaToggle({
         role="tab"
         aria-selected={userType === "landlord"}
         onClick={() => setUserType("landlord")}
-        className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+        className={`px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
           userType === "landlord"
             ? "bg-primary text-primary-foreground"
             : "text-muted-foreground"
@@ -560,6 +610,19 @@ function PersonaToggle({
         data-testid="button-toggle-landlord"
       >
         Landlord
+      </button>
+      <button
+        role="tab"
+        aria-selected={userType === "mut"}
+        onClick={() => setUserType("mut")}
+        className={`px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+          userType === "mut"
+            ? "bg-primary text-primary-foreground"
+            : "text-muted-foreground"
+        }`}
+        data-testid="button-toggle-mut"
+      >
+        Mut
       </button>
     </div>
   );
