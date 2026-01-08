@@ -3,19 +3,16 @@ on:
   push:
     branches:
       - main
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
-
       - name: 🔨 Build Website
         run: |
           npm install
           npm run build
-
       - name: 📂 Sync to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -23,4 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./
+          server-dir: ./public_html/
