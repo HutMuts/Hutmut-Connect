@@ -91,12 +91,12 @@ export default function Landing() {
   // Content based on user type
   const renterContent = {
     heroTitle: "Find Hidden Rentals Before Anyone Else",
-    heroSubtitle: "Our local Scouts photograph 'For Rent' signs before they hit the market. Get notified instantly, connect directly with landlords, skip the competition.",
+    heroSubtitle: "Our local Muts scout out 'For Rent' signs before they hit the market. Get notified instantly, connect directly with landlords, skip the competition.",
     howItWorks: [
       {
         icon: Search,
-        title: "Scouts Find Properties",
-        description: "Local Scouts photograph 'For Rent' signs in real neighborhoods, capturing hidden listings before they're posted online."
+        title: "Muts Find Properties",
+        description: "Local Muts scout out 'For Rent' signs in real neighborhoods, capturing hidden listings before they're posted online."
       },
       {
         icon: Bell,
@@ -113,23 +113,23 @@ export default function Landing() {
       { icon: Eye, title: "Hidden Listings", description: "Access properties that never make it online" },
       { icon: Zap, title: "No Competition", description: "Be first in line, not one of hundreds" },
       { icon: Users, title: "Direct to Landlord", description: "Skip agents and connect personally" },
-      { icon: ShieldCheck, title: "Scout-Verified", description: "Every property is real and verified" }
+      { icon: ShieldCheck, title: "Mut-Verified", description: "Every property is real and verified" }
     ]
   };
 
   const landlordContent = {
     heroTitle: "Quality Tenants, Zero Hassle",
-    heroSubtitle: "Stay private while our Scouts promote your property. Receive only verified, pre-qualified leads. No agencies, no spam calls.",
+    heroSubtitle: "Stay private while our Muts promote your property. Receive only verified, pre-qualified leads. No agencies, no spam calls.",
     howItWorks: [
       {
         icon: Lock,
         title: "List Privately",
-        description: "Keep your listing off public platforms. Our Scouts verify your 'For Rent' sign and digitize it securely."
+        description: "Keep your listing off public platforms. Our Muts verify your 'For Rent' sign and digitize it securely."
       },
       {
         icon: Sparkles,
-        title: "Scouts Promote",
-        description: "Local Scouts actively search for quality tenants looking for properties like yours in your neighborhood."
+        title: "Muts Promote",
+        description: "Local Muts actively scout out quality tenants looking for properties like yours in your neighborhood."
       },
       {
         icon: ShieldCheck,
@@ -156,7 +156,7 @@ export default function Landing() {
             {/* Logo */}
             <div className="flex items-center gap-2">
               <Home className="h-6 w-6 text-primary" />
-              <span className="font-bold text-xl text-foreground" data-testid="text-logo">Hutmuts</span>
+              <span className="font-bold text-xl text-foreground" data-testid="text-logo">Hut Muts</span>
             </div>
 
             {/* Persona Toggle - Center */}
@@ -254,13 +254,13 @@ export default function Landing() {
                       </div>
                       <p className="text-lg font-medium text-foreground">
                         {userType === "renter" 
-                          ? "Scouts discover hidden rentals" 
+                          ? "Muts discover hidden rentals" 
                           : "Connect with verified tenants"}
                       </p>
                       <p className="text-sm text-muted-foreground max-w-xs mx-auto">
                         {userType === "renter"
                           ? "Physical 'For Rent' signs photographed before they're listed online"
-                          : "Your property stays private while Scouts bring quality leads"}
+                          : "Your property stays private while Muts bring quality leads"}
                       </p>
                     </div>
                   </div>
@@ -284,7 +284,7 @@ export default function Landing() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-foreground">850+</p>
-                      <p className="text-xs text-muted-foreground">Active Scouts</p>
+                      <p className="text-xs text-muted-foreground">Active Muts</p>
                     </div>
                   </div>
                 </div>
@@ -336,7 +336,7 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-benefits-title">
-              Why Choose Hutmuts
+              Why Choose Hut Muts
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {userType === "renter" 
@@ -473,10 +473,10 @@ export default function Landing() {
             <div className="sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <Home className="h-6 w-6 text-primary" />
-                <span className="font-bold text-xl text-foreground">Hutmuts</span>
+                <span className="font-bold text-xl text-foreground">Hut Muts</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Digitizing physical 'For Rent' signs. Connecting renters to hidden properties, protecting landlords from spam.
+                Digitizing physical 'For Rent' signs. Muts scout out rentals in neighborhoods, connecting renters to hidden properties and protecting landlords from spam.
               </p>
             </div>
 
@@ -513,7 +513,7 @@ export default function Landing() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Hutmuts. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Hut Muts. All rights reserved.</p>
           </div>
         </div>
       </footer>

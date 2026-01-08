@@ -1,4 +1,4 @@
-# Hutmuts Design Guidelines
+# Hut Muts Design Guidelines
 
 ## Design Approach
 **Reference-Based**: Drawing from Zillow's professional real estate aesthetic combined with two-sided marketplace leaders like Airbnb (trust-building), adapted for the property rental vertical with emphasis on credibility, warmth, and simplicity.
@@ -6,7 +6,7 @@
 ## Core Design Principles
 1. **Trust-First**: Clean, professional aesthetic that signals credibility and security
 2. **Dual Personas**: Seamless toggle between Renter and Landlord experiences
-3. **Mobile-First**: Primary touchpoint for Scouts finding properties on-the-go
+3. **Mobile-First**: Primary touchpoint for Muts scouting out properties on-the-go
 4. **Conversion-Focused**: Clear path from landing - persona selection - waitlist signup
 5. **Inviting**: Generous spacing and subtle shadows create a welcoming feel
 

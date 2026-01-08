@@ -1,10 +1,10 @@
-# Hutmuts
+# Hut Muts
 
 ## Overview
 
-Hutmuts is a two-sided property rental marketplace that connects renters to hidden properties found by local "Scouts" who photograph physical "For Rent" signs. The platform bridges the gap between private landlords and renters, digitizing offline rental listings that never make it to traditional platforms.
+Hut Muts is a two-sided property rental marketplace that connects renters to hidden properties found by local "Muts" who scout out rentals in neighborhoods, photographing physical "For Rent" signs. The platform bridges the gap between private landlords and renters, digitizing offline rental listings that never make it to traditional platforms.
 
-The current implementation is a waitlist landing page with persona-based content switching (Renter vs Landlord views), designed with a trust-first, dark premium aesthetic inspired by Airbnb and Linear.
+The current implementation is a waitlist landing page with persona-based content switching (Renter vs Landlord views), designed with a Zillow-inspired aesthetic featuring an interactive Leaflet map with "For Rent" sign markers.
 
 ## User Preferences
 
