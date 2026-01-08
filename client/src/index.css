@@ -2,59 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - Hutmuts Trust Theme: Dark Navy & Emerald */
+/* LIGHT MODE - Zillow-Inspired Palette */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
   --opaque-button-border-intensity: -8;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
-  --background: 222 47% 11%;
-  --foreground: 0 0% 98%;
-  --border: 215 25% 22%;
-  --card: 222 45% 13%;
-  --card-foreground: 0 0% 98%;
-  --card-border: 215 25% 17%;
-  --sidebar: 222 45% 15%;
-  --sidebar-foreground: 0 0% 98%;
-  --sidebar-border: 215 25% 19%;
-  --sidebar-primary: 160 84% 39%;
+  --background: 0 0% 100%;
+  --foreground: 231 14% 18%;
+  --border: 220 13% 91%;
+  --card: 0 0% 98%;
+  --card-foreground: 231 14% 18%;
+  --card-border: 220 13% 88%;
+  --sidebar: 220 13% 96%;
+  --sidebar-foreground: 231 14% 18%;
+  --sidebar-border: 220 13% 92%;
+  --sidebar-primary: 214 100% 50%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 222 40% 18%;
-  --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-ring: 160 84% 39%;
-  --popover: 222 40% 17%;
-  --popover-foreground: 0 0% 98%;
-  --popover-border: 215 25% 21%;
-  --primary: 160 84% 39%;
+  --sidebar-accent: 220 13% 94%;
+  --sidebar-accent-foreground: 231 14% 18%;
+  --sidebar-ring: 214 100% 50%;
+  --popover: 0 0% 98%;
+  --popover-foreground: 231 14% 18%;
+  --popover-border: 220 13% 88%;
+  --primary: 214 100% 50%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 222 35% 20%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 222 30% 19%;
-  --muted-foreground: 215 20% 65%;
-  --accent: 222 20% 18%;
-  --accent-foreground: 0 0% 98%;
+  --secondary: 220 13% 94%;
+  --secondary-foreground: 231 14% 18%;
+  --muted: 220 13% 95%;
+  --muted-foreground: 220 10% 46%;
+  --accent: 214 30% 95%;
+  --accent-foreground: 231 14% 18%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --input: 215 20% 65%;
-  --ring: 160 84% 39%;
-  --chart-1: 160 84% 65%;
-  --chart-2: 200 84% 70%;
-  --chart-3: 280 65% 75%;
-  --chart-4: 30 80% 70%;
-  --chart-5: 340 75% 70%;
+  --input: 220 10% 46%;
+  --ring: 214 100% 50%;
+  --chart-1: 214 100% 50%;
+  --chart-2: 231 14% 18%;
+  --chart-3: 200 84% 45%;
+  --chart-4: 280 65% 50%;
+  --chart-5: 30 80% 55%;
   --font-sans: Inter, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
-  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
-  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
-  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
-  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
-  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 2px 4px -1px hsl(0 0% 0% / 0.00);
-  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 4px 6px -1px hsl(0 0% 0% / 0.00);
-  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 8px 10px -1px hsl(0 0% 0% / 0.00);
-  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --shadow-2xs: 0px 1px 2px 0px hsl(231 14% 18% / 0.04);
+  --shadow-xs: 0px 1px 3px 0px hsl(231 14% 18% / 0.06);
+  --shadow-sm: 0px 2px 4px 0px hsl(231 14% 18% / 0.06), 0px 1px 2px -1px hsl(231 14% 18% / 0.04);
+  --shadow: 0px 4px 6px -1px hsl(231 14% 18% / 0.08), 0px 2px 4px -2px hsl(231 14% 18% / 0.04);
+  --shadow-md: 0px 6px 10px -2px hsl(231 14% 18% / 0.10), 0px 3px 6px -3px hsl(231 14% 18% / 0.06);
+  --shadow-lg: 0px 10px 15px -3px hsl(231 14% 18% / 0.10), 0px 4px 6px -4px hsl(231 14% 18% / 0.06);
+  --shadow-xl: 0px 20px 25px -5px hsl(231 14% 18% / 0.10), 0px 8px 10px -6px hsl(231 14% 18% / 0.06);
+  --shadow-2xl: 0px 25px 50px -12px hsl(231 14% 18% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
@@ -87,55 +87,55 @@
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-/* Keep dark mode same as root since app is always dark */
+/* Dark mode with inverted Zillow theme */
 .dark {
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
   --opaque-button-border-intensity: 9;
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
-  --background: 222 47% 11%;
+  --background: 231 14% 11%;
   --foreground: 0 0% 98%;
-  --border: 215 25% 22%;
-  --card: 222 45% 13%;
+  --border: 231 14% 22%;
+  --card: 231 14% 14%;
   --card-foreground: 0 0% 98%;
-  --card-border: 215 25% 17%;
-  --sidebar: 222 45% 15%;
+  --card-border: 231 14% 20%;
+  --sidebar: 231 14% 13%;
   --sidebar-foreground: 0 0% 98%;
-  --sidebar-border: 215 25% 19%;
-  --sidebar-primary: 160 84% 39%;
+  --sidebar-border: 231 14% 19%;
+  --sidebar-primary: 214 100% 55%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 222 40% 18%;
+  --sidebar-accent: 231 14% 18%;
   --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-ring: 160 84% 39%;
-  --popover: 222 40% 17%;
+  --sidebar-ring: 214 100% 55%;
+  --popover: 231 14% 15%;
   --popover-foreground: 0 0% 98%;
-  --popover-border: 215 25% 21%;
-  --primary: 160 84% 39%;
+  --popover-border: 231 14% 21%;
+  --primary: 214 100% 55%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 222 35% 20%;
+  --secondary: 231 14% 20%;
   --secondary-foreground: 0 0% 98%;
-  --muted: 222 30% 19%;
-  --muted-foreground: 215 20% 65%;
-  --accent: 222 20% 18%;
+  --muted: 231 14% 19%;
+  --muted-foreground: 220 10% 65%;
+  --accent: 231 14% 18%;
   --accent-foreground: 0 0% 98%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --input: 215 20% 65%;
-  --ring: 160 84% 39%;
-  --chart-1: 160 84% 65%;
+  --input: 220 10% 65%;
+  --ring: 214 100% 55%;
+  --chart-1: 214 100% 65%;
   --chart-2: 200 84% 70%;
   --chart-3: 280 65% 75%;
   --chart-4: 30 80% 70%;
   --chart-5: 340 75% 70%;
-  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
-  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
-  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
-  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
-  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 2px 4px -1px hsl(0 0% 0% / 0.00);
-  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 4px 6px -1px hsl(0 0% 0% / 0.00);
-  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 8px 10px -1px hsl(0 0% 0% / 0.00);
-  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.08);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.12);
+  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.12), 0px 1px 2px -1px hsl(0 0% 0% / 0.08);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.16), 0px 2px 4px -2px hsl(0 0% 0% / 0.08);
+  --shadow-md: 0px 6px 10px -2px hsl(0 0% 0% / 0.20), 0px 3px 6px -3px hsl(0 0% 0% / 0.12);
+  --shadow-lg: 0px 10px 15px -3px hsl(0 0% 0% / 0.20), 0px 4px 6px -4px hsl(0 0% 0% / 0.12);
+  --shadow-xl: 0px 20px 25px -5px hsl(0 0% 0% / 0.20), 0px 8px 10px -6px hsl(0 0% 0% / 0.12);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.50);
 
   /* Fallback for older browsers */
   --sidebar-primary-border: hsl(var(--sidebar-primary));
@@ -285,5 +285,16 @@
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
+  }
+
+  /* Floating marker shadow for map elements */
+  .marker-shadow {
+    box-shadow: 0 4px 12px -2px hsl(231 14% 18% / 0.15), 
+                0 2px 6px -2px hsl(231 14% 18% / 0.10);
+  }
+  
+  .dark .marker-shadow {
+    box-shadow: 0 4px 12px -2px hsl(0 0% 0% / 0.30), 
+                0 2px 6px -2px hsl(0 0% 0% / 0.20);
   }
 }

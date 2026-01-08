@@ -197,7 +197,7 @@ export default function Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4">
+      <section className="pt-28 pb-20 sm:pt-40 sm:pb-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
@@ -259,8 +259,8 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-              {/* Floating Stats */}
-              <div className="absolute -bottom-4 -left-4 sm:-left-8 bg-card border border-card-border rounded-md p-4 shadow-lg">
+              {/* Floating Stats - Map Markers with floating shadow */}
+              <div className="absolute -bottom-4 -left-4 sm:-left-8 bg-card border border-card-border rounded-md p-4 marker-shadow">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-primary" />
@@ -271,7 +271,7 @@ export default function Landing() {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 sm:-right-8 bg-card border border-card-border rounded-md p-4 shadow-lg">
+              <div className="absolute -top-4 -right-4 sm:-right-8 bg-card border border-card-border rounded-md p-4 marker-shadow">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                     <Users className="w-5 h-5 text-primary" />
@@ -288,7 +288,7 @@ export default function Landing() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 sm:py-24 px-4 bg-card/50">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-card/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-how-it-works-title">
@@ -325,7 +325,7 @@ export default function Landing() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 sm:py-24 px-4">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-benefits-title">
@@ -359,7 +359,7 @@ export default function Landing() {
       </section>
 
       {/* Waitlist Section */}
-      <section id="waitlist" className="py-16 sm:py-24 px-4 bg-card/50">
+      <section id="waitlist" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-card/50">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-waitlist-title">
@@ -459,7 +459,7 @@ export default function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-border">
+      <footer className="py-16 px-4 sm:px-6 lg:px-8 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand */}
