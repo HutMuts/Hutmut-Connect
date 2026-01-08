@@ -23,14 +23,14 @@ const forRentIcon = L.divIcon({
 });
 
 const markerCoordinates: [number, number][] = [
-  [40.7280, -73.9850],
-  [40.7050, -74.0150],
-  [40.7180, -74.0300],
-  [40.6950, -73.9900],
-  [40.7350, -74.0050],
-  [40.7100, -73.9650],
-  [40.7220, -74.0450],
-  [40.6880, -74.0200],
+  [28.5383, -81.3792],  // Downtown Orlando
+  [28.5950, -81.3000],  // Winter Park
+  [28.4700, -81.4500],  // Dr. Phillips
+  [28.6200, -81.2000],  // UCF area
+  [28.4200, -81.3000],  // Kissimmee
+  [28.5600, -81.5200],  // Ocoee
+  [28.6800, -81.3500],  // Altamonte Springs
+  [28.5000, -81.2200],  // East Orlando
 ];
 
 export function HeroMap() {
@@ -41,8 +41,8 @@ export function HeroMap() {
     if (!mapRef.current || mapInstanceRef.current) return;
 
     const map = L.map(mapRef.current, {
-      center: [40.7128, -74.0060],
-      zoom: 12,
+      center: [28.5383, -81.3792],  // Orlando, FL
+      zoom: 10,
       zoomControl: false,
       attributionControl: false,
       dragging: false,
